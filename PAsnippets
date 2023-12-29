@@ -1,11 +1,18 @@
+#Formatting
 formatNumber(int(items('Apply_to_each_2')?['DueAmount1Gross']),'00,000.00')
 formatDateTime(items('Apply_to_each_2')?['DueDate1'],'dd MMMM yyyy')
 
 #If deferred fee
 if(equals(item()?['DeferredFeeGross'],0),
  '',
- concat('You are also deferring payment of £',formatNumber(int(item()?['DeferredFeeGross']),'00,000.00'),' and collection will start on ',formatDateTime(item()?['DueDate2'],'dd MMMM yyyy'))
+ concat('You are also deferring payment of £',formatNumber(int(item()?['DeferredFeeGross']),'00,000.00'),' and collection will start on ',
+addToTime(item()?['CommencementDate'],if(equals(formatDateTime(item()?['CommencementDate'],'d'),1),6,7),'Month','01/MM/yyyy'))
 )
 
-#Get deferred start date
-addToTime(item()?['CommencementDate'],7,'Month','01/MM/yyyy')
+#Calculations
+For [Your site name] opening on [commencement date] you will receive an invoice for pro-rata insurance, pro-rata customer processing system and pro-rata broadband.
+This will come to £XXX +VAT. This should be paid once you open.
+
+#Pro-rata insurance
+Check Landlord
+Broadband amount? Accounts to confirm?
