@@ -8,4 +8,4 @@ if(equals(item()?['DeferredFeeGross'],0),
 )
 
 #Get deferred start date
-addToTime(item()?['CommencementDate'],6,'Month','dd/MM/yyyy')
+addToTime(item()?['CommencementDate'],7,'Month','01/MM/yyyy')
