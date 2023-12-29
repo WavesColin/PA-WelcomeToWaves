@@ -6,3 +6,6 @@ if(equals(item()?['DeferredFeeGross'],0),
  '',
  concat('You are also deferring payment of £',formatNumber(int(item()?['DeferredFeeGross']),'00,000.00'),' and collection will start on ',formatDateTime(item()?['DueDate2'],'dd MMMM yyyy'))
 )
+
+#Get deferred start date
+addToTime(item()?['CommencementDate'],6,'Month','dd/MM/yyyy')
